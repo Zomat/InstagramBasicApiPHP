@@ -10,7 +10,7 @@
             'get_code' => isset($_GET['code']) ? $_GET['code'] : ''
         );
         @$ig = new InstagramBasicDisplay();
-        @$ig->firstSetup($params);
+        @$ig->setup($params);
     }else{
         @$ig = new InstagramBasicDisplay();
         $ig->setup(array('access_token' => $_SESSION['userAccessToken'], 'user_id' => $_SESSION['igUserId']));

@@ -15,7 +15,7 @@ class InstagramBasicDisplay{
     public $hasUserAccessToken = false;
     public $userId;
     
-    public function firstSetup($params){
+    public function setup($params){
         $this->_getCode = $params['get_code'];
         
         $this->_setUserInstagramAccessToken($params);
@@ -25,11 +25,6 @@ class InstagramBasicDisplay{
         $_SESSION['igUserId'] = $this->userId;
     }
 
-    public function setup($params){        
-        $this->_setUserInstagramAccessToken($params);
-        
-    }
-    
     private function _setAuthorizationUrl(){
         $getVars = array(
             'app_id' => $this->_appId,
